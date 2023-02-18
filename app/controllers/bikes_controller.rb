@@ -10,8 +10,8 @@ class BikesController < ApplicationController
   def create
     @bike = Bike.new(bike_params)
     # @bike.user = current_user # do we need to assign the creation of a bike to a user or not? >> ask TA
-    @bike.save
-    redirect_to bike_path[@bike]
+    @bike.save # WHY IS NOT SAVING THE BIKE? OR IS IT AND WE ARE NOT SEEING IT?
+    redirect_to @bike
   end
 
   def show
