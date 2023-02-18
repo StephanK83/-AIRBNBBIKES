@@ -1,0 +1,9 @@
+<%= form_with model: @bike do |f| %>
+  <%= f.label :brand %>
+  <%= f.text_field :brand %>
+  <%= f.label :color %>
+  <%= f.text_field :color %>
+  <%= f.label :price %>
+  <%= f.number_field :price %>
+  <%= f.submit %>
+<% end %>

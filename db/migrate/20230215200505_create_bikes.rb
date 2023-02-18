@@ -4,6 +4,7 @@ class CreateBikes < ActiveRecord::Migration[7.0]
       t.text :brand
       t.string :color
       t.float :price
+      t.references :user
 
       t.timestamps
     end
