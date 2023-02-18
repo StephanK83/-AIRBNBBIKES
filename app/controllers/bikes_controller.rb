@@ -1,6 +1,12 @@
 class BikesController < ApplicationController
+  before_action :set_bike, only: [:show, :edit, :update, :destroy]
+
   def index
     @bikes = Bike.all
+  end
+
+  def show
+    # @bike = bike_params[:id] # this won't work because we are not searching for it (? >> Ask TA
   end
 
   def new
@@ -10,27 +16,25 @@ class BikesController < ApplicationController
   def create
     @bike = Bike.new(bike_params)
     @bike.user = current_user # we need to assign the creation of a bike to a user
-    @bike.save!
-    redirect_to bikes_path
-  end
-
-  def show
-    # @bike = bike_params[:id] # this won't work because we are not searching for it (? >> Ask TA
-    @bike = Bike.find(params[:id])
+    if @bike.save # we use '!' to know if there is an error
+      redirect_to bikes_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit
-    @bike = Bike.find(params[:id])
   end
 
   def update
-    @bike = Bike.find(params[:id]) # can we call the "show" method to get the bike we want to update? >> Ask TA
-    @bike.update(bike_params)
-    redirect_to bike_path(@bike) # what does the _path do? It's a helper method that generate a url to the show action
+    if @bike.update(bike_params)
+      redirect_to bike_path(@bike) # what does the _path do? It's a helper method that generate a url to the show action
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
-    @bike = Bike.find(params[:id])
     @bike.destroy
     redirect_to bikes_path # this is going to direct us to the show page? >> ask TA, how does it work?
   end
@@ -39,5 +43,9 @@ class BikesController < ApplicationController
 
   def bike_params
     params.require(:bike).permit(:brand, :color, :price)
+  end
+
+  def set_bike
+    @bike = Bike.find(params[:id])
   end
 end
