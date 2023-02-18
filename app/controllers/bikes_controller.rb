@@ -9,15 +9,14 @@ class BikesController < ApplicationController
 
   def create
     @bike = Bike.new(bike_params)
-    # @bike.user = current_user # do we need to assign the creation of a bike to a user or not? >> ask TA
-    @bike.save # WHY IS NOT SAVING THE BIKE? OR IS IT AND WE ARE NOT SEEING IT?
-    redirect_to @bike
+    @bike.user = current_user # we need to assign the creation of a bike to a user
+    @bike.save!
+    redirect_to bikes_path
   end
 
   def show
     # @bike = bike_params[:id] # this won't work because we are not searching for it (? >> Ask TA
     @bike = Bike.find(params[:id])
-
   end
 
   def edit
@@ -33,7 +32,7 @@ class BikesController < ApplicationController
   def destroy
     @bike = Bike.find(params[:id])
     @bike.destroy
-    redirect_to bike_path # this is going to direct us to the show page? >> ask TA, how does it work?
+    redirect_to bikes_path # this is going to direct us to the show page? >> ask TA, how does it work?
   end
 
   private
@@ -41,5 +40,4 @@ class BikesController < ApplicationController
   def bike_params
     params.require(:bike).permit(:brand, :color, :price)
   end
-
 end
