@@ -1,5 +1,5 @@
 class Booking < ApplicationRecord
-  validates :start_date, :end_date, :total_price, presence: true
+  validates :start_date, :end_date, presence: true
   belongs_to :user
   belongs_to :bike
 end
