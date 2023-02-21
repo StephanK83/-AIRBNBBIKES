@@ -34,10 +34,10 @@ class BikesController < ApplicationController
     end
   end
 
-  def destroy
+  def destroy # doesn't work yet(!)
     @bike.destroy
     redirect_to bikes_path # this is going to direct us to the show page? >> ask TA, how does it work?
-  end
+   end
 
   private
 

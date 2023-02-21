@@ -1,3 +1,8 @@
-<div> <h1>test</h1>
-<h2><%#= @booking.total_price = (@booking.end_date - @booking.start_date) * @bike.price %></h2>
+<div> <h1>test buna seara</h1>
+<h2><%= @booking.total_price = (@booking.end_date.day - @booking.start_date.day) * @bike.price %></h2>
 </div>
+
+<%= link_to "Delete",
+  booking_path(@booking),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
