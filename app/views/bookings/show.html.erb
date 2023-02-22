@@ -4,5 +4,7 @@
 
 <%= link_to "Delete",
   booking_path(@booking),
+  # the _path is taking us to the "booking" url which is making a request to the URI bookings/id.
+  # to find the :id we are calling the booking instance, @booking
   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
 %>

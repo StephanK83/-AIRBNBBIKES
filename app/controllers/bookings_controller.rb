@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
 
   def index
-    @bookings = Booking.all
+    @bookings = Booking.all.includes(:bike)
   end
 
   def new
@@ -21,7 +21,7 @@ class BookingsController < ApplicationController
   end
 
   def show
-    @bike = @booking.bike 
+    @bike = @booking.bike
   end
 
   def edit
@@ -37,7 +37,7 @@ class BookingsController < ApplicationController
 
   def destroy # doesnt't work yet(!)
     @booking.destroy
-    redirect_to booking_path
+    redirect_to bookings_path
   end
 
   private
