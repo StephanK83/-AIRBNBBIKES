@@ -3,6 +3,12 @@
 <p><%= @bike.size %></p>
 <p><%= @bike.price %></p>
 
+
+<%= link_to "Update",
+  edit_bike_path(@bike),
+  data: {turbo_confirm: "Are you sure you want to update?"}
+%>
+
 <%= link_to "Delete",
   bike_path(@bike),
   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
