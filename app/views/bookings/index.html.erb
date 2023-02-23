@@ -1,5 +1,5 @@
 <ul>
   <% @bookings.each do |b| %>
-    <li><%= b.bike.brand %></li>
+    <%= link_to b.bike.brand, booking_path(b) %>
   <% end %>
 </ul>

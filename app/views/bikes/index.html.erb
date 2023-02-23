@@ -1,6 +1,8 @@
-<ul>
-  <% @bikes.each do |b| %>
-    <%#= b.brand %> <%# could be improved one day this week 20.02.2023 %>
-    <%= link_to b.brand, bike_path(b) %>
-  <% end %>
-</ul>
+<div>
+  <ul>
+    <% @bikes.each do |b| %>
+      <%#= b.brand %> <%# could be improved one day this week 20.02.2023 %>
+      <%= link_to b.brand, bike_path(b) %>
+    <% end %>
+  </ul>
+</div>

@@ -1,10 +1,16 @@
-<div> <h1>test buna seara</h1>
-<h2><%= @booking.total_price = (@booking.end_date.day - @booking.start_date.day) * @bike.price %></h2>
-</div>
+<div class ="container">
+  <h2>Total price <%= @booking.total_price = (@booking.end_date.day - @booking.start_date.day) * @bike.price %></h2>
+  <h2> Starting rent date <%= @booking.start_date.strftime("%d-%m-%Y") %></h2>
+  <h2> Ending rent date <%= @booking.end_date.strftime("%d-%m-%Y") %></h2>
 
-<%= link_to "Delete",
-  booking_path(@booking),
-  # the _path is taking us to the "booking" url which is making a request to the URI bookings/id.
-  # to find the :id we are calling the booking instance, @booking
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
+  <%= link_to "Delete booking",
+    booking_path(@booking),
+    # the _path is taking us to the "booking" url which is making a request to the URI bookings/id.
+    # to find the :id we are calling the booking instance, @booking
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
+    <%= link_to "Update booking",
+    edit_booking_path(@booking),
+    data: {turbo_confirm: "Are you sure you want to update?"}
+  %>
+</div>
