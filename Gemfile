@@ -3,6 +3,14 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.2"
 
+
+
+# dotenv
+gem "dotenv-rails", groups: [:development, :test]
+
+# adding cloudinary
+gem "cloudinary"
+
 # adding faker gem 21.02.23
 gem "faker"
 
