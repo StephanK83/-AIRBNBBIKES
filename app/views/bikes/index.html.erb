@@ -14,11 +14,10 @@
   <% @bikes.each do |bike| %>
     <div class="col-md-4">
       <div class="card mb-4">
-        <img src="<%= bike.image_url %>" class="card-img-top" alt="<%= bike.name %>">
+        <img src="<%= cl_image_tag("jyao2rntpihyjmlv53j0", width: 400, height: 300, crop: :fill) %>" class="card-img-top" alt="<%= bike.brand %>">
         <div class="card-body">
-          <h5 class="card-title"><%= bike.name %></h5>
-          <p class="card-text"><%= bike.description %></p>
-          <%= link_to "Book now", new_bike_booking_path(bike), class: "btn btn-primary" %>
+          <h5 class="card-title"><%= bike.brand %></h5>
+          <p class="card-text">Bike description</p>
         </div>
       </div>
     </div>
