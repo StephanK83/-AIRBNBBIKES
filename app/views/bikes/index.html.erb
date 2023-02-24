@@ -1,24 +1,11 @@
-<div>
-  <ul>
-    <% @bikes.each do |b| %>
-      <%#= b.brand %> <%# could be improved one day this week 20.02.2023 %>
-      <%= link_to b.brand, bike_path(b) %>
-    <% end %>
-  </ul>
-</div>
-
-<%= cl_image_tag("jyao2rntpihyjmlv53j0",
-      width: 400, height: 300, crop: :fill) %>
-
 <div class="row">
-  <% @bikes.each do |bike| %>
+  <% @bikes.each do |b| %>
     <div class="col-md-4">
       <div class="card mb-4">
-        <img src="<%= cl_image_tag("jyao2rntpihyjmlv53j0", width: 400, height: 300, crop: :fill) %>" class="card-img-top" alt="<%= bike.brand %>">
-        <div class="card-body">
-          <h5 class="card-title"><%= bike.brand %></h5>
-          <p class="card-text">Bike description</p>
-        </div>
+          <%#= b.brand %> <%# could be improved one day this week 20.02.2023 %>
+          <%#= link_to b.brand, bike_path(b) %>
+          <%= cl_image_tag b.photo.key,
+          width: 400, height: 300, crop: :fill %>
       </div>
     </div>
   <% end %>
