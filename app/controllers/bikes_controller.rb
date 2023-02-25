@@ -3,6 +3,15 @@ class BikesController < ApplicationController
 
   def index
     @bikes = Bike.all
+    # The `geocoded` scope filters only bikes with coordinates 24.02.23
+    @markers = @bikes.geocoded.map do |bike|
+      {
+        lat: bike.latitude,
+        lng: bike.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {bike: bike})
+        marker_html: render_to_string(partial: "marker", locals: {bike: bike})
+      }
+    end
   end
 
   def show
@@ -37,7 +46,7 @@ class BikesController < ApplicationController
   def destroy # doesn't work yet(!)
     @bike.destroy
     redirect_to bikes_path # this is going to direct us to the show page? >> ask TA, how does it work?
-   end
+  end
 
   private
 
