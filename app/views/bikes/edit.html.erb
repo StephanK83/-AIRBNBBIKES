@@ -1,8 +1,11 @@
 <div class="container">
   <%= simple_form_for @bike do |f| %>
+    <%= f.input :photo, as: :file %>
     <%= f.input :brand %>
     <%= f.input :color %>
     <%= f.input :size %>
+    <%= f.input :category %>
+    <%= f.input :address %>
     <%= f.input :price %>
     <%= f.submit %>
   <% end %>

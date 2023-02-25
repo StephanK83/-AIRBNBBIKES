@@ -35,7 +35,7 @@ class BookingsController < ApplicationController
     end
   end
 
-  def destroy # doesnt't work yet(!)
+  def destroy
     @booking.destroy
     redirect_to bookings_path
   end
