@@ -11,4 +11,5 @@ class Bike < ApplicationRecord
   validates :address, presence: true
   CATEGORY = %w[City Race MTB Gravel eBike]
   validates :category, inclusion: { within: CATEGORY, message: "%{value} is not in the list. It must be #{CATEGORY}" }, presence: true
+  validates :photo, presence: true
 end
