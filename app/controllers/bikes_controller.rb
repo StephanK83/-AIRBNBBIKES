@@ -6,7 +6,7 @@ class BikesController < ApplicationController
   end
 
   def show
-    # @bike = bike_params[:id] # this won't work because we are not searching for it (? >> Ask TA
+    # @bike = bike_params[:id]
   end
 
   def new
@@ -42,7 +42,7 @@ class BikesController < ApplicationController
   private
 
   def bike_params
-    params.require(:bike).permit(:brand, :color, :size, :price)
+    params.require(:bike).permit(:brand, :color, :size, :price, :category, :address)
   end
 
   def set_bike
