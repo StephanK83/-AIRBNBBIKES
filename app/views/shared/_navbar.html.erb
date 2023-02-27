@@ -3,7 +3,16 @@
     <%= link_to "/bikes", class: "navbar-brand" do %>
       <%= image_tag "https://res.cloudinary.com/dixcpm3ie/image/upload/v1677525366/index_yyp7r6.png" %>
     <% end %>
-
+    <div >
+      <%= form_with url: bikes_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :id,
+      params[:id],
+      class: "form-control",
+      placeholder: "Find a bike"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
+    </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
