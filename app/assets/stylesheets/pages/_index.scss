@@ -13,3 +13,13 @@
 .card-img-top {
   border-radius: 50;
 }
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.product-box:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02);
+}
