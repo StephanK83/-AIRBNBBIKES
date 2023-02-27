@@ -6,7 +6,8 @@ class BookingsController < ApplicationController
   end
 
   def new
-    @booking = Booking.new
+    bike = Bike.find_by(brand: params[:bike_brand])
+    @booking = Booking.new(bike: bike)
   end
 
   def create
