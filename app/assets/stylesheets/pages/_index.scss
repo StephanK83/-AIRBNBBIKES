@@ -11,12 +11,20 @@
 }
 
 .card-img-top {
-  border-radius: 50;
+  border-radius: 15px;
+}
+
+.product-inner-box {
+  padding: 5px;
 }
 
 a {
   text-decoration: none;
   color: #000;
+}
+
+.product-box {
+  border-radius: 15px;
 }
 
 .product-box:hover {
