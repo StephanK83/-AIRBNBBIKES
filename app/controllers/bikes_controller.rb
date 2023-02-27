@@ -12,6 +12,12 @@ class BikesController < ApplicationController
         marker_html: render_to_string(partial: "marker", locals: {bike: bike})
       }
     end
+    #pg_search gem added 25.02.23
+    if params[:id].present?
+      @bikes = Bike.search_by_brand_and_address(params[:id])
+    else
+      @bikes = Bike.all
+    end
   end
 
   def show

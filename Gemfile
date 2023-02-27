@@ -17,6 +17,9 @@ gem "faker"
 #adding GEOCODING gem 24.02.2023
 gem "geocoder"
 
+#adding pg search gem for search bar 25.02.2023
+gem "pg_search"
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4", ">= 7.0.4.2"
 

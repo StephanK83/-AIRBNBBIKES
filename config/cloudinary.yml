@@ -1,0 +1,20 @@
+production:
+  cloud_name: dqu9s951c
+  api_key: 227644728451852
+  api_secret: qBbtSfzrN9wVZSKCziTSin5uUZ8
+  enhance_image_tag: true
+  static_file_support: false
+
+development:
+  cloud_name: dqu9s951c
+  api_key: 227644728451852
+  api_secret: qBbtSfzrN9wVZSKCziTSin5uUZ8
+  enhance_image_tag: true
+  static_file_support: true
+
+test:
+  cloud_name: dqu9s951c
+  api_key: 227644728451852
+  api_secret: qBbtSfzrN9wVZSKCziTSin5uUZ8
+  enhance_image_tag: true
+  static_file_support: true
