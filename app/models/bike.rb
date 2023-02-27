@@ -16,4 +16,13 @@ class Bike < ApplicationRecord
   CATEGORY = %w[City Race MTB Gravel eBike]
   validates :category, inclusion: { within: CATEGORY, message: "%{value} is not in the list. It must be #{CATEGORY}" }, presence: true
   validates :photo, presence: true
+
+  include PgSearch::Model
+  pg_search_scope :search_by_brand_and_address,
+  against: [ :brand, :address ],
+  using: {
+    tsearch: { prefix: true } # <-- now `superman batm` will return something!
+  }
+
+
 end

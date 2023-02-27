@@ -27,14 +27,14 @@ users = []
   users << user # Add the user instance to the array
 end
 
-20.times do
+200.times do
   bike = Bike.new(
     brand: Faker::Vehicle.manufacture,
     category: ["City", "Race", "MTB", "Gravel", "eBike"].sample,
     color: Faker::Vehicle.color,
     size: ["51", "53", "55", "57", "60"].sample,
     price: Faker::Number.between(from: 0.0, to: 10.0),
-    address: Faker::Address.street_address,
+    address: Faker::Address.city,
     user: users.sample
   )
   file = URI.open('https://loremflickr.com/json/g/800/600/bicycle')
