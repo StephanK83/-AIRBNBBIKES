@@ -7,6 +7,10 @@
   <p><%= @bike.address %></p>
   <p><%= @bike.price %></p>
 
+<%= link_to "Book the bike",
+    new_booking_path(bike_id: @bike.id),
+    data: {turbo_confirm: "Are you sure you want to book"}
+  %>
 
   <%= link_to "Update",
     edit_bike_path(@bike),
