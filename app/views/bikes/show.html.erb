@@ -7,18 +7,26 @@
   <p><%= @bike.address %></p>
   <p><%= @bike.price %></p>
 
-<%= link_to "Book the bike",
-    new_booking_path(bike_id: @bike.id),
-    data: {turbo_confirm: "Are you sure you want to book"}
-  %>
+  <button type="button" class="btn btn-outline-success" data-toggle="button" aria-pressed="false" autocomplete="off">
 
-  <%= link_to "Update",
-    edit_bike_path(@bike),
-    data: {turbo_confirm: "Are you sure you want to update?"}
-  %>
+    <%= link_to "Book the bike",
+      new_booking_path(bike_id: @bike.id),
+      data: {turbo_confirm: "Are you sure you want to book"}
+    %>
+  </button>
+  <button type="button" class="btn btn-outline-info" data-toggle="button" aria-pressed="false" autocomplete="off">
 
-  <%= link_to "Delete",
-    bike_path(@bike),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-  %>
+    <%= link_to "update",
+      edit_bike_path(@bike),
+      data: {turbo_confirm: "Are you sure you want to update?"}
+    %>
+  </button>
+
+  <button type="button" class="btn btn-outline-danger" data-toggle="button" aria-pressed="false" autocomplete="off">
+
+    <%= link_to "Delete",
+      bike_path(@bike),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+    %>
+  </button>
 </div>
