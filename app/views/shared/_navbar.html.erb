@@ -19,6 +19,12 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
+        <%= link_to "http://www.instagram.com/bikesabnb", class: "navbar-brand", :title => "Follow airbnbbikes on instagram", target: :_blank do %>
+          <%= image_tag "https://res.cloudinary.com/dixcpm3ie/image/upload/v1677543967/14581_erknuz.jpg" %>
+        <% end %>
+        <%= link_to "http://www.twitter.com", class: "navbar-brand", :title => "Follow airbnbbikes on Twitter", target: :_blank do %>
+          <%= image_tag "https://res.cloudinary.com/dixcpm3ie/image/upload/v1677544403/8578_bekesi.png" %>
+        <% end %>
         <% if user_signed_in? %>
           <li class="nav-item active">
             <%= link_to "Home", root_path, class: "nav-link" %>
