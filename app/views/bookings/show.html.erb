@@ -19,14 +19,14 @@
   <div class="d-flex justify-content-center mb-3"><%= cl_image_tag @booking.bike.photo.key, class: "card-img-top", width: 400, height: 300, crop: :lfill, gravity: :center %>
   </div>
 
-
   <%= link_to "Delete booking",
     booking_path(@booking),
     # the _path is taking us to the "booking" url which is making a request to the URI bookings/id.
     # to find the :id we are calling the booking instance, @booking
     data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
   %>
-    <%= link_to "Update booking",
+
+  <%= link_to "Update booking",
     edit_booking_path(@booking),
     data: {turbo_confirm: "Are you sure you want to update?"}
   %>
