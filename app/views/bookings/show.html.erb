@@ -1,7 +1,24 @@
-<div class ="container">
-  <h2>Total price <%= @booking.total_price = (@booking.end_date.day - @booking.start_date.day) * @bike.price %></h2>
-  <h2> Starting rent date <%= @booking.start_date.strftime("%d-%m-%Y") %></h2>
-  <h2> Ending rent date <%= @booking.end_date.strftime("%d-%m-%Y") %></h2>
+<div class="container">
+  <div class="back-line">
+    <a href="/bookings" class="back-button">&#8249;</a>
+    <span class="back-title">Back</span>
+  </div>
+</div>
+
+<div class ="container col-sm-4 mt-4">
+  <h4 class="mb-3">Your bike</h4>
+
+  <div class="d-flex justify-content-between mb-3">
+      <h5>Dates: <%= @booking.start_date.strftime("%d %b") %> - <%= @booking.end_date.strftime("%d %b") %> </h5>
+      <div>
+        <% b_amount_days = (@booking.end_date.day - @booking.start_date.day) / 86400 %>
+        <h5>Total price: $<%= @booking.total_price = b_amount_days.to_i * @booking.bike.price * (-2) %></h5>
+      </div>
+  </div>
+
+  <div class="d-flex justify-content-center mb-3"><%= cl_image_tag @booking.bike.photo.key, class: "card-img-top", width: 400, height: 300, crop: :lfill, gravity: :center %>
+  </div>
+
 
   <%= link_to "Delete booking",
     booking_path(@booking),
