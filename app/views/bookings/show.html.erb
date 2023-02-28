@@ -1,7 +1,10 @@
 <div class ="container">
-  <h2>Total price <%= @booking.total_price = (@booking.end_date.day - @booking.start_date.day) * @bike.price %></h2>
-  <h2> Starting rent date <%= @booking.start_date.strftime("%d-%m-%Y") %></h2>
-  <h2> Ending rent date <%= @booking.end_date.strftime("%d-%m-%Y") %></h2>
+  <div>
+    <% booking_amount_days = (@booking.end_date.day - @booking.start_date.day) / 86400 %>
+    <h3>Total price <%= @booking.total_price = booking_amount_days.to_i * @bike.price %></h3>
+    <h3> Starting rent date <%= @booking.start_date.strftime("%d-%m-%Y") %></h3>
+    <h3> Ending rent date <%= @booking.end_date.strftime("%d-%m-%Y") %></h3>
+  </div>
 
   <%= link_to "Delete booking",
     booking_path(@booking),
@@ -9,7 +12,8 @@
     # to find the :id we are calling the booking instance, @booking
     data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
   %>
-    <%= link_to "Update booking",
+
+  <%= link_to "Update booking",
     edit_booking_path(@booking),
     data: {turbo_confirm: "Are you sure you want to update?"}
   %>
