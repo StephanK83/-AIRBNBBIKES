@@ -1,0 +1,27 @@
+.back-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  color: #515050;
+  border-radius: 50%;
+  // padding: 10px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.back-button:hover {
+  background-color: rgb(255, 255, 255);
+}
+
+.back-line {
+  display: flex;
+  align-content: center;
+}
+
+.back-title {
+  // padding: 10px;
+  // font-size: 20px;
+}
